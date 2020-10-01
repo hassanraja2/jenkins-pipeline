@@ -1,0 +1,17 @@
+pipeline{
+        agent any
+        stages{
+	    
+            stage('build image'){
+                steps{
+                    sh "./build_push.sh"
+                }
+            }
+            stage('push image'){
+                steps{
+                    sh "./push.sh"
+		            }	
+            }
+	    
+        }    
+}
