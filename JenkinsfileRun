@@ -1,1 +1,17 @@
-flask-app-demo2
+pipeline{
+        agent any
+        stages{
+	    
+            stage('pull image'){
+                steps{
+                    sh "./pull.sh"
+                }
+            }
+            stage('run image'){
+                steps{
+                    sh "./run.sh"
+		            }	
+            }
+	    
+        }    
+}
